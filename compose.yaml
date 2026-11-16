@@ -1,0 +1,13 @@
+services:
+  web:
+    build: ./site
+    restart: unless-stopped
+
+  tunnel:
+    image: cloudflare/cloudflared:2026.11.0
+    restart: unless-stopped
+    command: tunnel --config /etc/cloudflared/config.yml run
+    volumes:
+      - /etc/cloudflared:/etc/cloudflared:ro
+    depends_on:
+      - web
