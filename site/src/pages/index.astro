@@ -2,28 +2,37 @@
 import Base from "../layouts/Base.astro";
 
 const links = [
-	{ label: "LinkedIn", href: "https://linkedin.com/in/juusosar" },
-	{ label: "GitHub", href: "https://github.com/juusosar" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/juusosarkela" },
+    { label: "GitHub", href: "https://github.com/juusosar" },
 ];
 ---
 
 <Base title="dev - Juuso Särkelä">
-	<div class="page">
-		<main class="hero">
-			<h1 class="hero__title">Welcome, I am glad to see you here.</h1>
-			<p class="hero__lede">
-				Something great is brewing here. In the meantime, you can go check out:
-			</p>
+    <div class="page">
+        <main class="hero">
+            <h1 class="hero__title">Welcome, I am glad to see you here.</h1>
+            <p class="hero__lede">
+                Something great is brewing here. In the meantime, you can go
+                check out:
+            </p>
 
-			<ul class="links" role="list">
-				{links.map(({ label, href }) => (
-					<li><a href={href} target="_blank" rel="noopener noreferrer">{label}</a></li>
-				))}
-			</ul>
-		</main>
+            <ul class="links" role="list">
+                {links.map(({ label, href }) => (
+                    <li>
+                        <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </main>
 
-		<footer class="site-footer">
-			<p>© {new Date().getFullYear()} Juuso Särkelä</p>
-		</footer>
-	</div>
+        <footer class="site-footer">
+            <p>© {new Date().getFullYear()} Juuso Särkelä</p>
+        </footer>
+    </div>
 </Base>
